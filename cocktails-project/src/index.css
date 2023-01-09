@@ -150,6 +150,7 @@ Navbar
 .nav-links {
   display: flex;
   align-items: center;
+  margin-right: -2rem;
 }
 .nav-links li {
   text-transform: capitalize;
@@ -158,7 +159,7 @@ Navbar
   margin-right: 0.5rem;
   font-weight: 400;
   letter-spacing: 2px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   padding: 0.25rem 0.5rem;
   transition: var(--mainTransition);
 }
@@ -166,7 +167,19 @@ Navbar
   color: var(--primaryColor);
 }
 .logo {
-  width: 12rem;
+  width: 8rem;
+}
+
+@media screen and (min-width: 768px) {
+  .nav-links {
+    margin-right: 0;
+  }
+  .nav-links li {
+    font-size: 1.25rem;
+  }
+  .logo {
+    width: 12rem;
+  }
 }
 /* 
 ====== 
