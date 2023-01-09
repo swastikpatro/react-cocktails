@@ -1,20 +1,30 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logo from '../assets/logo.svg';
 
 const Navbar = () => {
   return (
     <nav className='navbar'>
       <div className='nav-center'>
-        <Link to='/'>
+        <NavLink to='/'>
           <img src={logo} alt='' className='logo' />
-        </Link>
+        </NavLink>
 
         <ul className='nav-links'>
           <li>
-            <Link to='/'>Home</Link>
+            <NavLink
+              to='/'
+              className={({ isActive }) => (isActive ? 'active' : '')}
+            >
+              Home
+            </NavLink>
           </li>
           <li>
-            <Link to='/about'>About</Link>
+            <NavLink
+              className={({ isActive }) => (isActive ? 'active' : '')}
+              to='/about'
+            >
+              About
+            </NavLink>
           </li>
         </ul>
       </div>
