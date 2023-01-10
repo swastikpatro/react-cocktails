@@ -3,6 +3,10 @@ import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import Error from '../pages/Error';
 import { singleProductStateType } from '../types';
+import { motion as m } from 'framer-motion';
+// initial={{ opacity: 0, y: 50 }}
+//       animate={{ opacity: 1, y: 0 }}
+//       transition={{ duration: 0.5, ease: [0.61, 1, 0.88, 1] }}
 
 const SingleCocktail = () => {
   let { id } = useParams();
@@ -98,13 +102,18 @@ const SingleCocktail = () => {
 
   if (singleProductState.error) {
     return (
-      <section className='cocktail-section'>
+      <m.section
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: [0.61, 1, 0.88, 1] }}
+        className='cocktail-section'
+      >
         <div className='loading-container'>
           <h2 style={{ color: 'red' }}>
             Unable to fetch data, please check your internet connection 🛠.
           </h2>
         </div>
-      </section>
+      </m.section>
     );
   }
 
@@ -120,11 +129,29 @@ const SingleCocktail = () => {
     singleProductState.cocktail;
   return (
     <section className='cocktail-section'>
-      <h2 className='section-title'>{name}</h2>
+      <m.h2
+        initial={{ opacity: 0, y: -15 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: [0.61, 1, 0.88, 1] }}
+        className='section-title'
+      >
+        {name}
+      </m.h2>
 
       <div className='drink'>
-        <img src={image} alt={name} />
-        <div className='drink-info'>
+        <m.img
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, ease: [0.61, 1, 0.88, 1] }}
+          src={image}
+          alt={name}
+        />
+        <m.div
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, ease: [0.61, 1, 0.88, 1] }}
+          className='drink-info'
+        >
           <p>
             <span className='drink-data'>name :</span> {name}
           </p>
@@ -145,11 +172,17 @@ const SingleCocktail = () => {
             <span className='drink-data'>Ingredients :</span>
             {ingredients.join(', ')}
           </p>
-        </div>
+        </m.div>
       </div>
-      <Link to='/' className='btn btn-primary' style={{ marginTop: '1rem' }}>
-        Back to Home
-      </Link>
+      <m.span
+        initial={{ opacity: 0, y: 15 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: [0.61, 1, 0.88, 1] }}
+      >
+        <Link to='/' className='btn btn-primary' style={{ marginTop: '1rem' }}>
+          Back to Home
+        </Link>
+      </m.span>
     </section>
   );
 };
