@@ -10,6 +10,7 @@ https://user-images.githubusercontent.com/113245457/211576387-a3c40203-d397-4a17
 
 ## Features:
 
+- Responsive
 - Debounced Search with 500ms delay built using custom useDebounce hook.
 - Input value gets trimmed before fetching, so to avoid searches including white spaces like ' GG ' => 'GG';
 - Fetches all product data, from API and displays on the Home Page.
