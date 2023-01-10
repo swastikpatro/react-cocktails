@@ -148,9 +148,10 @@ Navbar
   max-width: var(--fullWidth);
 }
 .nav-links {
-  display: flex;
-  align-items: center;
-  margin-right: -2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  margin-right: -1rem;
 }
 .nav-links li {
   text-transform: capitalize;
@@ -159,7 +160,7 @@ Navbar
   margin-right: 0.5rem;
   font-weight: 400;
   letter-spacing: 2px;
-  font-size: 1rem;
+  font-size: 0.85rem;
   padding: 0.25rem 0.5rem;
   transition: var(--mainTransition);
 }
