@@ -14,8 +14,8 @@ function App() {
             <Route index element={<Home />} />
             <Route path='about' element={<About />} />
             <Route path='cocktail/:id' element={<SingleCocktail />} />
-            <Route path='*' element={<Error />} />
           </Route>
+          <Route path='*' element={<Error />} />
         </Routes>
       </BrowserRouter>
     </>

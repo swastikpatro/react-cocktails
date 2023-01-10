@@ -12,7 +12,7 @@ const Cocktail = ({ cocktailData }: { cocktailData: cocktailType }) => {
         <h3>{name}</h3>
         <h4>{glass}</h4>
         <p>{alcohol}</p>
-        <Link className='btn btn-primary' to={`/cocktail/:${id}`}>
+        <Link className='btn btn-primary' to={`/cocktail/${id}`}>
           Details
         </Link>
       </div>

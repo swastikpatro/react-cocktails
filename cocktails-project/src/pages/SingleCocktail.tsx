@@ -6,7 +6,6 @@ import { singleProductStateType } from '../types';
 
 const SingleCocktail = () => {
   let { id } = useParams();
-  id = id?.slice(1);
 
   const [singleProductState, setSingleProductState] =
     useState<singleProductStateType>({
@@ -21,8 +20,6 @@ const SingleCocktail = () => {
       const res: any = await axios(
         `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`
       );
-
-      console.log(res);
 
       const {
         data: { drinks },
@@ -40,7 +37,6 @@ const SingleCocktail = () => {
       }
 
       const [drink] = drinks;
-      console.log(drink);
 
       const ingredients = Object.keys(drink)
         .filter(
@@ -105,7 +101,7 @@ const SingleCocktail = () => {
       <section className='cocktail-section'>
         <div className='loading-container'>
           <h2 style={{ color: 'red' }}>
-            Unable to fetch Data, please check your internet connection 🛠.
+            Unable to fetch data, please check your internet connection 🛠.
           </h2>
         </div>
       </section>
