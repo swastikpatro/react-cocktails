@@ -4,6 +4,10 @@
 
 Displays various cocktails 🍺 and directs to specific single product pages using react router v6.
 
+## DEMO ▶
+
+https://user-images.githubusercontent.com/113245457/211576387-a3c40203-d397-4a17-bf8f-9c6a2b8a62e0.mp4
+
 ## Features:
 
 - Debounced Search with 500ms delay built using custom useDebounce hook.
