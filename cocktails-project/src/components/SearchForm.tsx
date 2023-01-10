@@ -1,13 +1,14 @@
 import { useEffect, useRef } from 'react';
 import useDebounce from '../useDebounce';
-const SearchForm = ({
-  newSearchText,
-}: {
-  newSearchText: (text: string) => void;
-}) => {
+import { useAppContext } from '../pages/AppContextProvider';
+const SearchForm = () => {
+  const { newSearchText, searchText } = useAppContext();
   const searchInputRef = useRef<HTMLInputElement>(null!);
   const debounce = useDebounce();
   useEffect(() => {
+    if (searchText) {
+      searchInputRef.current.value = searchText;
+    }
     searchInputRef.current.focus();
   }, []);
 

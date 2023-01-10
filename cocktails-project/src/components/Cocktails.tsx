@@ -3,10 +3,12 @@ import { useCallback, useEffect, useState } from 'react';
 import Cocktail from './Cocktail';
 import { stateType } from '../types';
 import Loading from '../Loading';
+import { useAppContext } from '../pages/AppContextProvider';
 
 const URL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
 
-const Cocktails = ({ text }: { text: string }) => {
+const Cocktails = () => {
+  const { searchText: text } = useAppContext();
   const [state, setState] = useState<stateType>({
     cocktails: [],
     loading: true,

@@ -29,7 +29,7 @@ const SingleCocktail = () => {
         data: { drinks },
       } = res;
 
-      console.log({ data: res.data });
+      // console.log({ data: res.data });
 
       if (drinks === null || res.data === '') {
         setSingleProductState({
@@ -48,7 +48,7 @@ const SingleCocktail = () => {
             singleProp.includes('Ingredient') && drink[singleProp] !== null
         )
         .map((singleProp) => drink[singleProp]);
-      console.log(ingredients);
+      // console.log(ingredients);
 
       const {
         strDrink: name,
